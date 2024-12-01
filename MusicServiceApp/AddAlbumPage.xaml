@@ -1,0 +1,45 @@
+﻿<Window x:Class="MusicService.AddAlbumPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicService"
+        mc:Ignorable="d"
+        Title="AddAlbumPage" Height="450" Width="800">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel Margin="10">
+                <TextBlock Text="Name of the album:" FontWeight="Bold" FontSize="12" Margin="5"/>
+                <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1">
+                    <TextBox x:Name="txtAlbumName" Margin="0 5" MaxLength="100">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Padding" Value="5" />
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </Border>
+                <TextBlock Text="Date added:" FontWeight="Bold" FontSize="12" Margin="5"/>
+                <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1">
+                    <DatePicker x:Name="dpDateAdded" Margin="0 5">
+                        <DatePicker.Style>
+                            <Style TargetType="DatePicker">
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Padding" Value="5" />
+                            </Style>
+                        </DatePicker.Style>
+                    </DatePicker>
+                </Border>
+
+                <Button Content="Select Image" Width="100" Margin="0,10" Click="SelectImage_Click"/>
+                <Image x:Name="imgSelectedImage" Width="200" Height="200" Margin="0,10" Stretch="Uniform"/>
+
+                <Button Content="Add" Click="AddButton_Click" HorizontalAlignment="Center" Margin="0 10"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

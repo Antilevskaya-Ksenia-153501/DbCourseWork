@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AddAlbumPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddPlaylistPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddSongPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AllSongs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ArtistAlbums.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ArtistPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ArtistSongs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GetAlbumSongs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GetPlaylistSongs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ListenerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ListenerPlaylists.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RegisterArtistPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RegisterListenerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddAlbumPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddPlaylistPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddSongPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AllSongs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ArtistAlbums.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ArtistPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ArtistSongs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\DatePicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GetAlbumSongs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GetPlaylistSongs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListenerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListenerPlaylists.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegisterArtistPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegisterListenerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Global.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

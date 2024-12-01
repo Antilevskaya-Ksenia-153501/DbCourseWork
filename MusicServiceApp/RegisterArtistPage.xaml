@@ -1,0 +1,68 @@
+﻿<Page x:Class="MusicService.RegisterArtistPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ctrl="clr-namespace:MusicService.Controls"
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="RegisterArtistPage">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Register" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,40" />
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="300">
+                <ctrl:TextBox
+                    x:Name="TxtName"
+                    Caption="Name"
+                    Hint="Enter your name"
+                    MaxLength="50" />
+
+                <Button Content="Select Avatar" Margin="40 15" Click="SelectImage_Click" />
+                <Image x:Name="ImgSelectedImage" MaxWidth="200" MaxHeight="200" Stretch="Uniform" />
+
+                <ctrl:TextBox
+                    x:Name="TxtBiography"
+                    Caption="Biography"
+                    Hint="Enter your biography"
+                    AcceptsReturn="True" />
+
+                <StackPanel x:Name="LabelsStackPanel" Margin="0,5" />
+
+                <ctrl:TextBox
+                    x:Name="TxtUsername"
+                    Caption="Username"
+                    Hint="Enter your username"
+                    MaxLength="50" />
+
+                <ctrl:PasswordBox
+                    x:Name="TxtPassword"
+                    Caption="Password"
+                    Hint="Enter your password"
+                    MaxLength="100" />
+
+                <ctrl:PasswordBox
+                    x:Name="TxtConfirmPassword"
+                    Caption="Confirm password"
+                    Hint="Confirm your password"
+                    MaxLength="100" />
+
+                <!--<TextBlock Text="Roles" Margin="0,10,0,0" />
+        <StackPanel x:Name="rolesStackPanel" Margin="0,5"></StackPanel>-->
+                <Button Content="Register" Click="Register_Click" Margin="0 15" />
+
+                <TextBlock Margin="0,10,0,0" HorizontalAlignment="Center">
+                    Already have an account?
+                    <Hyperlink NavigateUri="LoginPage.xaml">
+                        <TextBlock Text="Login here" Foreground="Blue" TextDecorations="Underline" />
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

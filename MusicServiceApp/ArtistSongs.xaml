@@ -1,0 +1,128 @@
+﻿<Page x:Class="MusicService.ArtistSongs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="ArtistSongs"
+      x:Name="ArtistSongsPage"
+      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d">
+    
+    
+
+    <Grid>
+        <Popup
+            x:Name="AddToAlbumPopup"
+            IsOpen="False"
+            Placement="Right"
+            StaysOpen="False"
+            HorizontalOffset="-5"
+            AllowsTransparency="True"
+            PopupAnimation="Slide"
+            Width="120">
+            <Border
+                Background="White"
+                BorderBrush="Gray"
+                CornerRadius="5"
+                BorderThickness="1"
+                HorizontalAlignment="Center"
+                Padding="10">
+                <ListView
+                    Panel.ZIndex="999"
+                    SelectionChanged="AddToAlbum_CLick"
+                    ItemsSource="{Binding ElementName=ArtistSongsPage, Path=Albums}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="0 5" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+        </Popup>
+        <MediaElement x:Name="MusicPlayer" Visibility="Collapsed" LoadedBehavior="Manual" UnloadedBehavior="Manual" />
+        <StackPanel>
+            <TextBlock Text="All ArtistSongs" FontWeight="Bold" FontSize="20" Margin="5" />
+
+            <ListView
+                x:Name="MusicListView"
+                ItemsSource="{Binding ElementName=ArtistSongsPage, Path=Songs}"
+                Margin="10">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Height="40" Width="40">
+                                <Border.Background>
+                                    <ImageBrush
+                                        ImageSource="{Binding FilePath, Converter={StaticResource MusicToCoverImageConverter}}"
+                                        Stretch="UniformToFill" />
+                                </Border.Background>
+                            </Border>
+
+                            <TextBlock
+                                Grid.Column="1"
+                                VerticalAlignment="Center"
+                                Text="{Binding Title}"
+                                Margin="5" />
+
+                            <TextBlock
+                                Grid.Column="4"
+                                VerticalAlignment="Center"
+                                Text="{Binding Duration, Converter={StaticResource SecondsToTimeConverter}}"
+                                Margin="5" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Play" Click="PlaySong_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Play" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Pause" Click="StopSong_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Pause" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem
+                            Header="Add to album"
+                            MouseEnter="AddToAlbum_MenuItem_MouseEnter"
+                            MouseLeave="AddToAlbum_MenuItem_MouseLeave">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Add" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Delete" Click="DeleteButton_Click">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="WindowClose" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+        </StackPanel>
+
+        <Button
+            Content="Add a song"
+            Click="AddButton_Click"
+            VerticalAlignment="Bottom"
+            Margin="5"
+            Width="130" />
+    </Grid>
+</Page>
